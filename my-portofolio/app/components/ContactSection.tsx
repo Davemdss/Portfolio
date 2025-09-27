@@ -10,8 +10,8 @@ interface ContactSectionProps {
 
 const socialLinks = [
   { icon: Mail, label: "Email", href: "mailto:dave30dec@gmail.com" },
-  { icon: Github, label: "GitHub", href: "https://github.com/Davemdss" },
-  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/dave-mandas-888495292/" },
+  { icon: Github, label: "GitHub", href: "https://github.com/yourusername" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/yourusername" },
 ]
 
 export default function ContactSection({ isActive }: ContactSectionProps) {
@@ -26,7 +26,7 @@ export default function ContactSection({ isActive }: ContactSectionProps) {
         animate={isActive ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5 }}
       >
-        Let's Connect
+        Let&apos;s Connect
       </motion.h2>
 
       <motion.p
@@ -35,7 +35,7 @@ export default function ContactSection({ isActive }: ContactSectionProps) {
         animate={isActive ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        Ready to collaborate on your next project? I'd love to hear from you and discuss how we can work together.
+        Ready to collaborate on your next project? I&apos;d love to hear from you and discuss how we can work together.
       </motion.p>
 
       <motion.div
@@ -76,7 +76,7 @@ export default function ContactSection({ isActive }: ContactSectionProps) {
         transition={{ duration: 0.5, delay: 0.8 }}
       >
         <h3 className="text-xl font-semibold mb-2">Quick Contact</h3>
-        <p className="text-neutral-400 text-sm mb-4">Drop me a line and I'll get back to you as soon as possible.</p>
+        <p className="text-neutral-400 text-sm mb-4">Drop me a line and I&apos;ll get back to you as soon as possible.</p>
         <Button className="w-full bg-[#FF4D00] hover:bg-[#FF4D00]/90 text-black" asChild>
           <a href="mailto:dave30dec@gmail.com">
             <Mail className="w-4 h-4 mr-2" />
