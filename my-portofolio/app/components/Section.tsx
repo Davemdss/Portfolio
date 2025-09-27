@@ -32,7 +32,7 @@ export default function Section({ id, title, subtitle, content, isActive, showBu
           animate={isActive ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
         >
-          <TypingAnimation words={greetings} />, I'm Dave
+          <TypingAnimation words={greetings} />, I&apos;m Dave
         </motion.h2>
         {content && (
           <motion.p
