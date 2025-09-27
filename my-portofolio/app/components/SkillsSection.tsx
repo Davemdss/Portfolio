@@ -11,31 +11,9 @@ interface SkillsSectionProps {
 }
 
 const skills = [
-  { category: "Frontend", items: [
-    { name: "React", years: 2, mastery: 80 },
-    { name: "Next.js", years: 1, mastery: 70 },
-    { name: "TypeScript", years: 1, mastery: 70 },
-    { name: "Tailwind CSS", years: 1, mastery: 75 },
-    { name: "Javascript", years: 1, mastery: 70 },
-    { name: "HTML", years: 1, mastery: 70 },
-    { name: "CSS", years: 1, mastery: 70 },
-  ]},
-  { category: "Backend", items: [
-    { name: "Node.js", years: 1, mastery: 65 },
-    { name: "C#", years: 1, mastery: 85 },
-    { name: "PostgreSQL", years: 1, mastery: 65 },
-    { name: "Java", years: 2, mastery: 85 },
-    { name: "C", years: 2, mastery: 85 },
-    { name: "python", years: 1, mastery: 70 },
-  ]},
-  { category: "Tools", items: [
-    { name: "GitHub", years: 1, mastery: 60 },
-    { name: "VScode", years: 2, mastery: 85 },
-    { name: "Vercel", years: 1, mastery: 70 },
-    { name: "Canva", years: 3, mastery: 90 },
-    { name: "Figma", years: 2, mastery: 85 },
-    { name: "Eclipse", years: 2, mastery: 80 },
-  ]},
+  { category: "Frontend", items: [ { name: "React", years: 2, mastery: 80 }, { name: "Next.js", years: 1, mastery: 70 }, { name: "TypeScript", years: 1, mastery: 70 }, { name: "Tailwind CSS", years: 1, mastery: 75 }, { name: "Javascript", years: 1, mastery: 70 }, { name: "HTML", years: 1, mastery: 70 }, { name: "CSS", years: 1, mastery: 70 }, ]},
+  { category: "Backend", items: [ { name: "Node.js", years: 1, mastery: 65 }, { name: "C#", years: 1, mastery: 85 }, { name: "PostgreSQL", years: 1, mastery: 65 }, { name: "Java", years: 2, mastery: 85 }, { name: "C", years: 2, mastery: 85 }, { name: "python", years: 1, mastery: 70 }, ]},
+  { category: "Tools", items: [ { name: "GitHub", years: 1, mastery: 60 }, { name: "VScode", years: 2, mastery: 85 }, { name: "Vercel", years: 1, mastery: 70 }, { name: "Canva", years: 3, mastery: 90 }, { name: "Figma", years: 2, mastery: 85 }, { name: "Eclipse", years: 2, mastery: 80 }, ]},
 ];
 
 const pieChartData = [
@@ -46,7 +24,21 @@ const pieChartData = [
 const COLORS = ["#FF4D00", "#A3A3A3", "#525252"];
 const softSkills = ["Effective Communication", "Problem Solving", "Team Collaboration", "Project Management", "Adaptability"]
 
-const AnimatedPieLabel = ({ cx, cy, midAngle, outerRadius, name, value, index }: any) => {
+interface AnimatedPieLabelProps {
+  cx?: number;
+  cy?: number;
+  midAngle?: number;
+  outerRadius?: number;
+  name?: string;
+  value?: number;
+  index?: number;
+}
+
+const AnimatedPieLabel = ({ cx, cy, midAngle, outerRadius, name, value, index }: AnimatedPieLabelProps) => {
+  if (cx === undefined || cy === undefined || midAngle === undefined || outerRadius === undefined || name === undefined || value === undefined || index === undefined) {
+    return null;
+  }
+
   const RADIAN = Math.PI / 180;
   const radius = outerRadius * 1.3;
   const x = cx + radius * Math.cos(-midAngle * RADIAN);
